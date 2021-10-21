@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Avaibility Zone</title>
+</head>
+<body>
+    <h3 style="text-align: center;">Availability Zone</h3>
+    <ol>
+        <li><strong>Availability Zone là gì?</strong></li>
+        <br>
+        <ul>
+            <li>
+                Mỗi Region (khu vực) sẽ có nhiều Availability Zone (AZ). Các AZ là các vùng độc lập so với nhau.
+            </li>
+            <br>
+            <img src="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/images/aws-az.png">
+            <li>
+                Có thể phân bổ các instance vào nhiều AZ khác nhau. Khi 1 instance ở AZ này chết, thì instance ở AZ khác sẽ handle request
+            </li>
+            <li>
+                Có thể sử dụng elastic IP để làm mật nạ cho các AZ.
+            </li>
+        </ul>
+        <li>
+            <strong>
+                Cách kiểm tra AZ?
+            </strong>
+        </li>
+        <br>
+        <ul>
+            <li>
+                Mở trang Amazon EC2 tại <a href="https://ap-northeast-1.console.aws.amazon.com/ec2/v2/home?region=ap-northeast-1#Home:">đây</a>
+            </li>
+            <li>
+                Kéo xuống phần Service health
+            </li>
+            <li>
+                Kiểm tra thông tin zone
+            </li>
+            <img src="access/img/Screenshot%20from%202021-10-21%2023-48-18.png" style="width:1000px;">
+        </ul>
+    </ol>
+</body>
+</html>

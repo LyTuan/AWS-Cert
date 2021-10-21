@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Region</title>
+</head>
+<body>
+<h3 style="text-align: center;">Region</h3>
+<ol>
+    <li><strong>Region là gì?</strong></li>
+    <br>
+    <ul>
+        <li>
+            Region là khu vực. AWS phân chia các Region độc lập so với các Region khác. ví dụ: US, Euro
+        </li>
+        <li>
+            Mục đích của Region để tăng khả năng chịu lỗi và đạt được sự ổn định tốt nhất.
+        </li>
+        <li>
+            Ví dụ: Trong trường hợp xảy ra lỗi, nếu các instance đều được tạo tạo trong cùng Region thì không có instance để back up
+        </li>
+    </ul>
+    <br>
+    <li>
+        <strong>Cách kiểm tra Region?</strong>
+    </li>
+    <br>
+    <ul>
+        <li>
+            Mở Amazone console tại <a href="https://console.aws.amazon.com/ec2/">đây</a>
+        </li>
+        <li>
+            Từ navigation bar, xem các option trong mục Region selector
+        </li>
+        <img src="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/images/EC2_select_region.png">
+    </ul>
+    <br>
+    <li>
+        <strong>Cách setup Region default trên AWS cho các instance</strong>
+    </li>
+    <br>
+    <ul>
+        <li>Mở AWS cli tại <a href="https://ap-northeast-1.console.aws.amazon.com/cloudshell/">Cloud Shell</a></li>
+        <li>Kiểm tra default region bằng lệnh <code>echo $AWS_DEFAULT_REGION</code></li>
+        <li>Thay đổi default region bằng lệnh <code>export AWS_DEFAULT_REGION=other-region</code></li>
+    </ul>
+</ol>
+</body>
+</html>
