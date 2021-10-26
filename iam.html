@@ -41,17 +41,43 @@
             <img src="https://d1.awsstatic.com/video-thumbs/IAM/Create_User.c57acec4d5fd7a3374af6e47bd4df942f15af200.png">
 
         </li>
-        <li>Bước 1: Truy cập vào trang <a href="https://console.aws.amazon.com/iamv2/home?#/users"> Quản lý User</a> và
-            click Add User
-        </li>
-        <li>
-            Bước 2:
-        </li>
-
-
     </ul>
     <br>
     <li><strong>Group</strong></li>
+    <h4>Tạo IAM Group</h4>
+    <ul>
+        <li>
+            Bước 1: Truy cập trang IAM console ở link <a href="https://console.aws.amazon.com/iam/home#/home">iam</a>
+        </li>
+        <li>
+            Bước 2: Tại thanh điều hướng bên trái, chọn <strong>User groups</strong>, sau đó bấm <strong>Create
+            group</strong>
+        </li>
+        <br>
+        <img src="access/img/Create_Group.png" alt="create-group" style="width: 960px;">
+        <br>
+        <li>
+            Bước 3: Tại trang Create user group, nhập các thông tin sau:
+            <ul>
+                <li>
+                    User group name: <strong>ec2-rds-admin-group</strong>
+                </li>
+                <li>
+                    Cuốn xuống mục <b> Attach permissions policies - Optional</b>, tìm và chọn các policy <b>
+                    AmazonEC2FullAccess, AmazonRDSFullAccess </b>và <b>DatabaseAdministrator</b>
+                </li>
+                <li>
+                    Kiểm tra và bấm <b>Create group</b>
+                </li>
+
+            </ul>
+        </li>
+        <img src="access/img/Create_Group_Success.png" style="width: 960px;">
+        <li>
+            Như vậy, bạn đã tạo thành công IAM Group.
+        </li>
+
+    </ul>
     <br>
     <li><strong>Roles</strong></li>
     <br>
