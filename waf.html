@@ -12,15 +12,38 @@
     </li>
     <br>
     <ul>
-        <li>WAF (Web application firewall) là tưởng lửa ứng dụng web chống lại các cuộc tấn công vào ứng dụng web và các con bots</li>
-        <li>Cho phép người dùng cấu hình các Rule </li>
+        <li>WAF (Web application firewall) là tưởng lửa ứng dụng web chống lại các cuộc tấn công vào ứng dụng web và các
+            con bots
+        </li>
+        <li>Cho phép người dùng cấu hình các Rule</li>
     </ul>
     <br>
     <iframe width="380" height="214" src="https://www.youtube.com/embed/W4hg--UYpq0" title="YouTube video player"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
-
+    <li>
+        <b>Tường lửa làm được gì?</b>
+    </li>
+    <br>
+    <ul>
+        <li>Cho phép tất cả các request đi qua ngoại trừ 1 số request đặc biệt</li>
+        <li>Chăn tất cả các request ngoại trừ 1 số request đặc biệt được phép đi qua</li>
+        <li>Đếm số lượng các request có các đặc điểm khớp với 1 số thuộc tính đặc biệt</li>
+    </ul>
+    <br>
+    <b>Tường lửa web còn chống lại 1 số loại tấn công phổ biến như:</b>
+    <ul>
+        <li>Chặn tất cả các truy cập độc hại: SQL Injection (SQLi), Cross-site scripting (XSS), Remote file
+            inclusion(RFI), DDoS attack on level 7, bad bot dựa vào rule
+        </li>
+        <li>
+            Lọc các truy cập: Đánh giá dựa vào IP, Matching bằng string hoặc regex,
+        </li>
+        <li>
+            Giám sát: Đưa ra logs và các cảnh báo độ đo Amazon Cloud watch
+        </li>
+    </ul>
 </ol>
 </body>
 </html>
