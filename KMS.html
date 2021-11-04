@@ -28,26 +28,50 @@
     <li><b>Một số lệnh quan trọng</b></li>
     <br>
     <ul>
-        <li><code>aws configure</code></li>
-        <li><code>aws kms create-key</code></li>
-        <li><code>aws kms create-alias --alias-name alias/FirstCMK --target-key-id
-            '6a535ef0-db0c-4b47-8ea6-b83e4069aa09'</code></li>
-        <li><code>aws kms create-key --origin EXTERNAL</code></li>
-        <li><code>aws kms get-parameters-for-import --key-id external-key-id --wrapping-algorithm RSAES_OAEP_SHA_1
-            --wrapping-key-spec RSA_2048
-        </code></li>
-        <li><code>aws kms get-parameters-for-import --key-id d16a6752-a128-457c-8234-e7aa2cf8f4b2 --wrapping-algorithm
-            RSAES_OAEP_SHA_1 --wrapping-key-spec RSA_2048</code></li>
-        <li><code>openssl enc -d -base64 -A -in pkey.b64 -out pkey.bin</code></li>
-        <li><code>openssl enc -d -base64 -A -in token.b64 -out token.bin</code></li>
-        <li><code> openssl rand -out genkey.bin 32</code></li>
-        <li><code>openssl rsautl -encrypt -in genkey.bin -oaep -inkey pkey.bin -keyform DER -pubin -out
-            WrappedKeyMaterial.bin</code></li>
-        <li><code>aws kms import-key-material --key-id d16a6752-a128-457c-8234-e7aa2cf8f4b2 --encrypted-key-material
+        <li>
+            <code>aws configure</code>
+        </li>
+        <li>
+            <code>aws kms create-key</code>
+        </li>
+        <li>
+            <code>aws kms create-alias --alias-name alias/FirstCMK --target-key-id
+                '6a535ef0-db0c-4b47-8ea6-b83e4069aa09'</code>
+        </li>
+        <li>
+            <code>aws kms create-key --origin EXTERNAL</code>
+        </li>
+        <li>
+            <code>aws kms get-parameters-for-import --key-id external-key-id --wrapping-algorithm RSAES_OAEP_SHA_1
+                --wrapping-key-spec RSA_2048
+            </code>
+        </li>
+        <li>
+            <code>aws kms get-parameters-for-import --key-id d16a6752-a128-457c-8234-e7aa2cf8f4b2 --wrapping-algorithm
+            RSAES_OAEP_SHA_1 --wrapping-key-spec RSA_2048</code>
+        </li>
+        <li>
+            <code>openssl enc -d -base64 -A -in pkey.b64 -out pkey.bin</code>
+        </li>
+        <li>
+            <code>openssl enc -d -base64 -A -in token.b64 -out token.bin</code>
+        </li>
+        <li>
+            <code> openssl rand -out genkey.bin 32</code>
+        </li>
+        <li>
+            <code>openssl rsautl -encrypt -in genkey.bin -oaep -inkey pkey.bin -keyform DER -pubin -out
+            WrappedKeyMaterial.bin</code>
+        </li>
+        <li>
+            <code>aws kms import-key-material --key-id d16a6752-a128-457c-8234-e7aa2cf8f4b2 --encrypted-key-material
             fileb://WrappedKeyMaterial.bin --import-token fileb://token.bin --expiration-model KEY_MATERIAL_EXPIRES
-            --valid-to 2021-02-01T12:00:00-08:00</code></li>
-        <li><code>aws kms schedule-key-deletion --key-id 6a535ef0-db0c-4b47-8ea6-b83e4069aa09 --pending-window-in-days
-            7</code></li>
+            --valid-to 2021-02-01T12:00:00-08:00</code>
+        </li>
+        <li>
+            <code>aws kms schedule-key-deletion --key-id 6a535ef0-db0c-4b47-8ea6-b83e4069aa09 --pending-window-in-days
+            7</code>
+        </li>
 
     </ul>
     <br>
