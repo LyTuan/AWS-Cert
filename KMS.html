@@ -48,7 +48,7 @@
         </li>
         <li>
             <code>aws kms get-parameters-for-import --key-id d16a6752-a128-457c-8234-e7aa2cf8f4b2 --wrapping-algorithm
-            RSAES_OAEP_SHA_1 --wrapping-key-spec RSA_2048</code>
+                RSAES_OAEP_SHA_1 --wrapping-key-spec RSA_2048</code>
         </li>
         <li>
             <code>openssl enc -d -base64 -A -in pkey.b64 -out pkey.bin</code>
@@ -61,20 +61,29 @@
         </li>
         <li>
             <code>openssl rsautl -encrypt -in genkey.bin -oaep -inkey pkey.bin -keyform DER -pubin -out
-            WrappedKeyMaterial.bin</code>
+                WrappedKeyMaterial.bin</code>
         </li>
         <li>
             <code>aws kms import-key-material --key-id d16a6752-a128-457c-8234-e7aa2cf8f4b2 --encrypted-key-material
-            fileb://WrappedKeyMaterial.bin --import-token fileb://token.bin --expiration-model KEY_MATERIAL_EXPIRES
-            --valid-to 2021-02-01T12:00:00-08:00</code>
+                fileb://WrappedKeyMaterial.bin --import-token fileb://token.bin --expiration-model KEY_MATERIAL_EXPIRES
+                --valid-to 2021-02-01T12:00:00-08:00</code>
         </li>
         <li>
             <code>aws kms schedule-key-deletion --key-id 6a535ef0-db0c-4b47-8ea6-b83e4069aa09 --pending-window-in-days
-            7</code>
+                7</code>
         </li>
 
     </ul>
     <br>
+
+    <li><b>Mã hóa với AWS KMS – Không sử dụng Data key</b></li>
+    <br>
+    <ul>
+        <li><code>echo "New secret text" > NewSecretFile.txt</code></li>
+        <li><code> aws kms encrypt --key-id alias/ImportedCMK --plaintext fileb://NewSecretFile.txt --encryption-context project=kmsworkshop --output text  --query CiphertextBlob | base64 --decode > NewSecretsEncryptedFile.txt</code></li>
+        <li><code>aws kms decrypt --ciphertext-blob fileb://NewSecretsEncryptedFile.txt --encryption-context project=kmsworkshop --output text</code></li>
+        <li><code>echo The_text_receive | base64 --decode</code></li>
+    </ul>
 
 </ol>
 </body>
