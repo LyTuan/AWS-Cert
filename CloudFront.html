@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CloudFront</title>
+</head>
+<body>
+<h3 style="text-align: center;">Cloud Front</h3>
+<ol>
+    <li><b>Content Delivery Network (CDN) là gì?</b></li>
+    <br>
+    <ul>
+        <li>
+            Content Delivery Network (CDN) hay mạng phân phối nội dung là một nhóm server đặt tại nhiều vị trái khác
+            nhau để hỗ trợ nội dung được trải dài ở nhiều khu vực vị trí địa lý khác nhau.
+        </li>
+
+        <li>
+            CDN cũng được gọi là “distribution networks”. Ý tưởng là tạo được nhiều điểm truy cập (Point of Presence –
+            PoPs) ngoài server gốc. Việc này giúp website quản lý tốt traffic hơn bằng cách xử lý nhanh hơn yêu cầu của
+            khách, tăng trải nghiệm người dùng.
+        </li>
+    </ul>
+    <br>
+    <li><b>Cloud Front là gì?</b></li>
+    <br>
+    <ul>
+        <li>
+            CloudFront là dịch vụ CDN tốc độ cực cao mà Amazon cung cấp để phân phối dữ liệu, video, ứng dung, API ở mức
+            độ toàn cầu mà vẫn đảm bảo an toàn bảo mật
+        </li>
+    </ul>
+    <br>
+    <li><b>Cách thức hoạt động của Cloud Front?</b></li>
+    <img src="https://images.viblo.asia/full/8b74cd60-34ac-462b-a594-3df1182e0c3a.png">
+    <br>
+    <ul>
+        <li>Đầu tiên sử dụng CloudFront để chỉ rõ ra Origin Server, đây là nơi dùng để lưu trữ content, ví dụ như S3 hay
+            chính Server của bạn.
+        </li>
+        <li>
+            Khi có request đến, Edge Locations sẽ trả về dữ liệu luôn nếu như dữ liệu cần thiết đang được cache trên
+            Edge Locations đó. Nếu không, CloudFront sẽ Request đến Origin Server để lấy dữ liệu đó, lưu lại tại cache
+            của Edge Location và trả dữ liệu cho Request.
+        </li>
+        <li>
+            CloudFront sẽ tự động routing các request tới địa điểm thích hợp nhất dựa trên vị trí xuất phát của request
+            đó để đem lại Performance nhanh nhất có thể.
+        </li>
+    </ul>
+</ol>
+</body>
+</html>
