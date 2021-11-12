@@ -6,10 +6,23 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>AWS Learning</title>
+    <style>
+        #two-columns {
+            /*width: 100%;*/
+            margin-left: 20px;
+            /*border: 1px solid black;*/
+            -moz-column-count: 2;
+            -moz-column-gap: 20px;
+            -webkit-column-count: 2;
+            -webkit-column-gap: 20px;
+            column-count: 2;
+            column-gap: 20px;
+        }
+    </style>
 </head>
 <body>
 <h3 style="text-align: center;">This is page for AWS Learning</h3>
-<ol>
+<ol id="two-columns">
     <li><a href="./region.html">Region</a></li>
     <li><a href="./Availability_Zone.html">Availability Zones</a></li>
     <li><a href="./Edge_Location.html">Edge Locations</a></li>
@@ -17,9 +30,9 @@
     <li><a href="./iam.html"><strong>IAM</strong></a></li>
     <li><a href="./trusted_advisor.html">Trusted Advisor</a></li>
     <li><a href="./waf.html">WAF</a></li>
-    <li><a href="./Shield">Shield</a> </li>
-    <li><a href="./Artifact">Artifact</a> </li>
-    <li><a href="./KMS">KMS</a> </li>
+    <li><a href="./Shield">Shield</a></li>
+    <li><a href="./Artifact">Artifact</a></li>
+    <li><a href="./KMS">KMS</a></li>
     <li><a href="./Cognito">Cognito</a></li>
     <li><a href="./VPC"><b>VPC</b></a></li>
     <li><a href="./CloudFront">CloudFront</a></li>
