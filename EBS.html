@@ -13,7 +13,85 @@
     <br>
     <ul>
         <li>
+            EBS (Amazon Elastic Block Store) là một dịch vụ lưu trữ khối dữ liệu hiệu suất cao, được thiết kế cho EC2.
+            EBS cho phép tạo ổ đĩa có thể attach vào EC2
+        </li>
+        <li>
+            Cho phép lưu trữ dài hạn kể cả khi instance đã bị xóa (Phụ thuộc setup)
+        </li>
+        <li>
+            Chỉ được phép attach vào duy nhất instance trong cùng 1 khoảng thời gian
+        </li>
+        <li>
+            EBS bị cố định bởi các AZ, khi tạo ở AZ A thì chỉ attach cho các instance thuộc AZ đó
+        </li>
+    </ul>
+    <br>
+    <li>
+        <b>EBS snaphot là gì?</b>
+    </li>
+    <br>
+    <ul>
+        <li>
+            Snaphot được hiểu như 1 file chụp của EBS tại một thời điểm. Dựa vào file này AWS có thể build ra chính xác
+            nội dung của EBS tại thời điểm đó
+        </li>
+        <li>
+            Phục vụ mục đích muốn backup lại EBS của bạn tại một thời điểm nào đó với mục đích restore lại nếu muốn
+            trong tương lai.
+        </li>
+        <li>
+            Hoặc bạn muốn di chuyển dữ liệu hoặc instance của mình từ một AZ này sang 1 AZ khác (Create EBS by Snapshot)
+            hoặc chuyển từ region này sang region khác thông qua chức năng copy Snapshot ==> Create EBS by Snapshot ==>
+            Attach Instance
+        </li>
+    </ul>
+    <br>
+    <li>
+        <b>Các loại Type EBS?</b>
+    </li>
+    <br>
+    <ul>
+        <li> Có tất cả 6 loại EBS khác nhau, phân loại dựa vào <b>Size</b>, <b>Throughput</b>, <b>IOPS (I/O Ops per
+            second)</b> được chi thành các category như sau:
+        </li>
+        <li>
+            gp2 và gp3: Thiết kế bộ nhớ là SSD phục vụ cho web app (size: 1GB -> 16TB)
+            <ul>
+                <li>
+                    gp2: 3000 <= IOPS <= 16000 --> Khi tăng IOPS cần tăng size
+                </li>
+                <li>
+                    gp3: Phiên bản volume mới hơn, 3000 <= IOPS <= 160000, 125MB/s <= throughput <= 1000 MB/s
+                </li>
+            </ul>
+        </li>
+        <li>
+            io1 và io2: Hiệu năng cực cao (SSD) phù hợp với các nhiệm vụ có độ trễ thấp hoặc app cần IOPS > 16000
+            <ul>
+                <li>
+                    Size: 4GB --> 16GB
+                </li>
+                <li>
+                    Max IOPS: 64000
+                </li>
+                <li>
+                    Support multi attach to instance
+                </li>
+            </ul>
+        </li>
+        <li>
+            st1 và st2: Mức chi phí rẻ với HDD volume được thiết kế cho các app truy cập ít nhưng throughput
+            với mức độ thường
+            <ul>
+                <li>
+                    st1: Size (125MB --> 16 TB), IOPS, Throughput < 500
+                </li>
 
+                <li>
+                    st2: Size (125MB --> 16TB), IOPS < 250, Throughput < 250
+                </li>
+            </ul>
         </li>
 
 
