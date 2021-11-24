@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EFS</title>
+</head>
+<body>
+<h3 style="text-align: center;">EFS</h3>
+<br>
+<ul>
+    <li>
+        <b>EFS là gì?</b>
+    </li>
+    <ul>
+        <li>
+            EFS là service hỗ trợ chia sẻ file thông qua NFS (Network file system) trên nhiều EC2 khác nhau.
+            Điều này cũng có nghĩa EFS có thể hoạt động trên nhiều EC2 khác nhau và nằm trên nhiều AZ khác nhau
+        </li>
+        <li>
+            EFS mang lại tính bổ trợ rất cao đối với EBS vì EBS bị khóa trên 1 AZ còn EFS sẽ giúp chúng ta share data
+            trên nhiều AZ khác nhau
+        </li>
+        <li>
+            Chi phí sử dụng EFS khá cao = gp2 * . Chi phí này phụ thuộc vào lượng sử dụng, sử dụng đến đâu thì trả đến
+            đấy
+        </li>
+        <li>
+            EFS sử dụng giao thức NFSv4.1
+        </li>
+        <li>
+            EFS sử dụng tương thích với các AMI base trên linux
+        </li>
+        <li>
+            Performance mode:
+            <ul>
+                <li>
+                    General purpose: Phục vụ các app thông thường cần chia sẻ file hệ thống với nhiều file nhỏ
+                </li>
+                <li>
+                    Max I/O: Phục vụ các big data hay media processing cần through put cao và lacenty tốt hơn
+                </li>
+            </ul>
+        </li>
+        <li>
+            Lưu trữ:
+            <ul>
+                <li>
+                    Standard: các file thường xuyên được truy cập
+                </li>
+                <li>
+                    EFS-IA: Các file không thường xuyên được truy cập sau N ngày. N=30. Mục đích lưu trữ dạng này chi
+                    phí thấp hơn. Khi file được truy cập thì ngay lập tức trở thành standard
+                </li>
+            </ul>
+        </li>
+    </ul>
+</ul>
+</body>
+</html>
